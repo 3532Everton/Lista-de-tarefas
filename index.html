@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR" id="html" style="color: rgb(255, 255, 255); background:rgb(38, 38, 38);">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Descrição -->
+    <meta name="description" content="Site de treinamento de JavaScript de Everton Martins">
+    <!-- arquivo CSS -->
+    <link rel="stylesheet" href="style.css" type="text/CSS">
+    <!-- Fonte awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- script JS -->
+    <script src="script.js" defer></script>
+
+    <title>Lista de tarefas</title>
+</head>
+<body>
+    <!-- Barra de botão de navegação -->
+    <nav>
+        <!-- Botão de configurações de cores da página -->
+        <div class="cor-bnt" id="cor-bnt">
+            <i class="fa-solid fa-palette cor-bnt-icon"></i>
+        </div>
+        <div class="cor-page-config" id="page-color-config">
+            <div class="painel-de-cores">
+                <h3>Plano de fundo</h3>
+                <span class="cores-de-fundo" onclick="backgroundColor('rgb(38, 38, 38)')" style="background:rgb(38, 38, 38);"></span> 
+                <span class="cores-de-fundo" onclick="backgroundColor('rgb(255, 255, 255)')" style="background:rgb(255, 255, 255);"></span> 
+                <span class="cores-de-fundo" onclick="backgroundColor('#008000')" style="background:rgb(0, 128, 0);"></span> 
+                <span class="cores-de-fundo" onclick="backgroundColor('rgb(255, 0, 0)')" style="background:rgb(255, 0, 0);"></span> 
+                <span class="cores-de-fundo" onclick="backgroundColor('rgb(255, 255, 0)')" style="background:rgb(255, 255, 0);"></span> 
+                <span class="cores-de-fundo" onclick="backgroundColor('rgb(0, 0, 255)')" style="background:rgb(0, 0, 255);"></span> 
+                <span class="cores-de-fundo" onclick="backgroundColor('rgb(255, 192, 203)')" style="background:rgb(255, 192, 203);"></span> 
+            </div>
+            <hr>
+            <div class="painel-de-cores">
+                <h3>Cor do texto</h3>
+                <span class="cores-de-texto" onclick="textColor('rgb(38, 38, 38)')" style="background: rgb(38, 38, 38);"></span>
+                <span class="cores-de-texto" onclick="textColor('rgb(255, 255, 255)')" style="background: rgb(255, 255, 255);"></span>
+                <span class="cores-de-texto" onclick="textColor('rgb(0, 128, 0)')" style="background: rgb(0, 128, 0);"></span>
+                <span class="cores-de-texto" onclick="textColor('rgb(255, 0, 0)')" style="background: rgb(255, 0, 0);"></span>
+                <span class="cores-de-texto" onclick="textColor('rgb(255, 255, 0)')" style="background: rgb(255, 255, 0);"></span>
+                <span class="cores-de-texto" onclick="textColor('rgb(0, 0, 255)')" style="background: rgb(0, 0, 255);"></span>
+                <span class="cores-de-texto" onclick="textColor('rgb(255, 192, 203)')" style="background: rgb(255, 192, 203);"></span>
+            </div>
+        </div>
+    </nav>
+    <!-- Cabeçalho Titulo -->
+    <h1>Lista de tarefas</h1>
+    <!-- Corpo -->
+    <main>
+        <!-- adicionar tarefa -->
+        <div class="cabecalho">
+            <h2>Adicionar tarefa</h2>
+            <div class="bloco-de-adicao">
+                <div class="bloco-de-adicao-titulo">
+                    <label for="titulo-tarefa">Titulo da tarefa: </label>
+                    <input type="text" name="titulo-tarefa" id="titulo-tarefa" required placeholder="Titulo da tarefa">
+                </div>
+                <div class="bloco-de-adicao-corpo">
+                    <textarea name="corpo-tarefa" id="corpo-tarefa" placeholder="Texto..."></textarea>
+                    <div class="botoes-estilizacoes">
+                        <button id="bnt-negrito">B</button>
+                        <button id="bnt-italico">I</button>
+                    </div>
+                </div>
+                <div class="bloco-de-adicao-bnts">
+                    <button class="bnt-add-tarefas" onclick="adicionarTarefa()" id="bnt-add-tarefas">Adicionar</button>
+                    <button class="bnt-clear-tarefas" id="bnt-clear-tarefas">Limpar</button>
+                </div>
+            </div>
+        </div>
+        <!-- bloco de tarefas -->
+        <div class="corpo">
+            <!-- Tarefas -->
+            <h2>Suas tarefas</h2>
+            <div class="bloco-de-tarefas">
+                <div class="tarefas" id="tarefas">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
