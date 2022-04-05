@@ -36,7 +36,7 @@ input {
     padding: 1em;
 }
 input:focus, textarea:focus {
-    outline: 1px solid #32cd32;
+    outline: 2px solid #32cd32;
 }
 button {
     color: #000000;
@@ -50,6 +50,7 @@ nav {
     align-items: flex-end;
 
 }
+
 .cor-bnt {
     width: 50px;
     height: 50px;
@@ -125,6 +126,16 @@ nav {
     width: auto;
     flex-direction: column;
 }
+.botoes-estilizacoes button {
+    width: 25px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    margin: 0;
+}
+.botoes-estilizacoes i {
+    font-size: 10pt;
+}
 .botoes-estilizacoes #bnt-negrito{font-weight: 700;}
 .botoes-estilizacoes #bnt-italico{font-style: italic;}
 #corpo-tarefa{
@@ -166,7 +177,23 @@ nav {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 10px;
     margin: 5px 0;
+    background: #fff;
+    color: #000000;
+    display: grid;
 }
 .bloco-tarefa h3{
     text-decoration: underline;
+    grid-column: 1/4;
+    grid-row: 1;
+}
+.bloco-tarefa p{
+    width: 100%;
+    grid-column: 1/4;
+    grid-row: 2/4;
+}
+.bloco-tarefa .bnt-excluir {
+    grid-column: 3;
+    grid-row: 2;
+    position: relative;
+    left: 20px;
 }
