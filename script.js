@@ -6,10 +6,6 @@ colorConfig.addEventListener('click', function(){
     
     const paginaConfiguracao = document.getElementById('page-color-config')
     paginaConfiguracao.classList.toggle('abrirConfiguracoes')
-    paginaConfiguracao.addEventListener('mouseleave', function(){
-        paginaConfiguracao.classList.remove('abrirConfiguracoes')
-        colorConfig.classList.remove('ativo')
-    })
 })
 // -------------------------------------------------------
 // Cores de plano de fundo
@@ -47,7 +43,8 @@ bntLimpar.addEventListener('click', function(){
     valorInput.value = ''
     valorText.value = ''
 })
-
+// indentificador de tarefas 
+var tarefaIdentificador = 0
 // Script para manipular as tarefas as tarefas
 function manipularTarefas(){
     // Recebendo o valores do titulo e corpo
@@ -76,10 +73,12 @@ function manipularTarefas(){
         const bntExcluir = document.createElement('button') // cria o elemento 'button'
         const iconLixo = document.createElement('i') // cria o elemento 'i'
         
-        blocoTarefa.classList.add('bloco-tarefa') // adicioan a class no elemento 'div'
+        blocoTarefa.classList.add('bloco-tarefa') // adiciona a classe no elemento 'div'
+        blocoTarefa.setAttribute('id', `tarefa${tarefaIdentificador}`) // adiciona o id no elemento 'div'
         bTitulo.classList.add('bTitulo') // adiciona a classe no elemento 'h3'
         bCorpo.classList.add('bCorpo') // adiciona a classe no elemento 'p'
         bntExcluir.classList.add('bnt-excluir') // adiciona a classe no elemento 'button'
+        bntExcluir.setAttribute('onclick', `excluirTarefa(${tarefaIdentificador})`) // adiciona o envento 'onclick' no elemento 'button'
         iconLixo.classList.add('fa', 'fa-trash') // adiciona a classe no elemento 'i'
 
         addTarefas.insertAdjacentElement("afterbegin", blocoTarefa) // adiciona a div na div.tarefas
@@ -100,14 +99,13 @@ function manipularTarefas(){
         // Limpando os dados da tela
         valorInput.value = ''
         valorText.value = ''
+        tarefaIdentificador += 1
     }
+}
+function excluirTarefa(identificador){
     // Excluir tarefas
-
-    const bntExcluir = document.querySelector('.bnt-excluir')
-    bntExcluir.addEventListener('click', function(){
-        const blocoTarefa = document.querySelector('.bloco-tarefa')
-        blocoTarefa.parentNode.removeChild(blocoTarefa)
-    })
+    const blocoTarefa = document.getElementById(`tarefa${identificador}`)
+    blocoTarefa.parentNode.removeChild(blocoTarefa)
 }
 // -------------------------------------------------------
 
@@ -145,4 +143,3 @@ bntJustificar.addEventListener("click", function(){corpoTarefa.style.textAlign =
 bntCentralizar.addEventListener("click", function(){corpoTarefa.style.textAlign = 'center'; alinhamento = 'center'})
 bntEsquerda.addEventListener("click", function(){corpoTarefa.style.textAlign = 'left'; alinhamento = 'left'})
 bntDireita.addEventListener("click", function(){corpoTarefa.style.textAlign = 'right'; alinhamento = 'right'})
-
