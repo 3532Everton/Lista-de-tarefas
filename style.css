@@ -152,7 +152,8 @@ nav {
     color: #000000;
     text-align: left;
     padding: 1em;
-    resize: unset;;
+    resize: unset;
+    background: #fff;
 }
 .bloco-de-adicao-bnts {
     justify-content: space-evenly;
