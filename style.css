@@ -39,6 +39,11 @@ input {
 input:focus, textarea:focus {
     outline: 2px solid #32cd32;
 }
+@media (max-width: 600px){
+    div {
+        width: 90vw;
+    }
+}
 button {
     color: #000000;
 }
