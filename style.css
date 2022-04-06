@@ -34,6 +34,7 @@ input {
     border: 0;
     font-weight: 600;
     padding: 1em;
+    outline: 2px solid #262626;
 }
 input:focus, textarea:focus {
     outline: 2px solid #32cd32;
